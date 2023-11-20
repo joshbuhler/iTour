@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036FFBDF2B0BBC2B0090BB18 /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFBDE2B0BBC2B0090BB18 /* Sight.swift */; };
 		03AFEA682B08F61200557C67 /* iTourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFEA672B08F61200557C67 /* iTourApp.swift */; };
 		03AFEA6A2B08F61200557C67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFEA692B08F61200557C67 /* ContentView.swift */; };
 		03AFEA6C2B08F61400557C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AFEA6B2B08F61400557C67 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		036FFBDE2B0BBC2B0090BB18 /* Sight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sight.swift; sourceTree = "<group>"; };
 		03AFEA642B08F61200557C67 /* iTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AFEA672B08F61200557C67 /* iTourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTourApp.swift; sourceTree = "<group>"; };
 		03AFEA692B08F61200557C67 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				03AFEA692B08F61200557C67 /* ContentView.swift */,
 				03AFEA792B09022F00557C67 /* DestinationListingView.swift */,
 				03AFEA752B08F69500557C67 /* Destination.swift */,
+				036FFBDE2B0BBC2B0090BB18 /* Sight.swift */,
 				03AFEA6B2B08F61400557C67 /* Assets.xcassets */,
 				03AFEA6D2B08F61400557C67 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 				03AFEA6A2B08F61200557C67 /* ContentView.swift in Sources */,
 				03AFEA682B08F61200557C67 /* iTourApp.swift in Sources */,
 				03AFEA762B08F69500557C67 /* Destination.swift in Sources */,
+				036FFBDF2B0BBC2B0090BB18 /* Sight.swift in Sources */,
 				03AFEA782B08FB9500557C67 /* EditDestinationView.swift in Sources */,
 				03AFEA7A2B09022F00557C67 /* DestinationListingView.swift in Sources */,
 			);
