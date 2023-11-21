@@ -15,18 +15,15 @@ struct DestinationListingView: View {
     @Query(sort: [SortDescriptor(\Destination.priority, order: .reverse),
                   SortDescriptor(\Destination.name)]) var destinations:[Destination]
     
-    init(sort: SortDescriptor<Destination>, searchString:String) {
+    init(sort: [SortDescriptor<Destination>],
+         searchString:String,
+         futureTripsOnly:Bool = false) {
+        
 //        _destinations = Query(sort: [sort])
         
         // High priority only
 //        _destinations = Query(filter: #Predicate{
 //            $0.priority >= 2
-//        }, sort: [sort])
-        
-        // Only upcoming trips
-//        let now = Date.now
-//        _destinations = Query(filter: #Predicate{
-//            $0.date >= now
 //        }, sort: [sort])
         
         // Accept a search string
@@ -36,7 +33,14 @@ struct DestinationListingView: View {
             } else {
                 return $0.name.localizedStandardContains(searchString)
             }
-        }, sort: [sort])
+        }, sort: sort)
+        
+        if (futureTripsOnly) {
+            let now = Date.now
+            _destinations = Query(filter: #Predicate{
+                $0.date >= now
+            }, sort: sort)
+        }
     }
     
     var body: some View {
@@ -65,5 +69,5 @@ struct DestinationListingView: View {
 }
 
 #Preview {
-    DestinationListingView(sort: SortDescriptor(\Destination.name), searchString: "")
+    DestinationListingView(sort: [SortDescriptor(\Destination.name)], searchString: "")
 }

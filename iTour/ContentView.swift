@@ -16,11 +16,15 @@ struct ContentView: View {
     
     @State private var sortOrder = SortDescriptor(\Destination.name)
     
+    @State private var futureTripsOnly = false
+    
     @State private var searchText = ""
     
     var body: some View {
         NavigationStack(path: $path) {
-            DestinationListingView(sort: sortOrder, searchString: searchText)
+            DestinationListingView(sort: [sortOrder, SortDescriptor(\Destination.name)],
+                                   searchString: searchText,
+            futureTripsOnly: futureTripsOnly)
                 .navigationTitle("iTour")
                 .searchable(text: $searchText)
                 .navigationDestination(for: Destination.self,
@@ -39,6 +43,16 @@ struct ContentView: View {
                                 .tag(SortDescriptor(\Destination.date))
                         }
                         .pickerStyle(.inline)
+                    }
+                    
+                    Menu("Upcoming", systemImage: "calendar") {
+                        Picker("Date Range", selection: $futureTripsOnly) {
+                            Text("All Trips")
+                                .tag(false)
+                            Text("Future Only")
+                                .tag(true)
+                        }
+                        .pickerStyle(.automatic)
                     }
                 }
         }
